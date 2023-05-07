@@ -1,0 +1,3 @@
+# Shoo
+
+A Godot project
