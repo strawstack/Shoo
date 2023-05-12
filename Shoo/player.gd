@@ -2,16 +2,28 @@ extends KinematicBody2D
 
 export (int) var speed = 8 * 16
 
+var gc
 var velocity = Vector2()
 
+func _ready():
+	gc = get_tree().get_root().get_node("main")
+
 func get_input():
+	
 	velocity = Vector2()
+	
+	if Input.is_action_pressed("left_mouse"):
+		gc.fire()
+	
 	if Input.is_action_pressed("up"):
 		velocity.y -= 1
+		
 	if Input.is_action_pressed("right"):
 		velocity.x += 1
+		
 	if Input.is_action_pressed("down"):
 		velocity.y += 1
+		
 	if Input.is_action_pressed("left"):
 		velocity.x -= 1
 
